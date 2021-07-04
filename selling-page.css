@@ -1,0 +1,65 @@
+ /* * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        }*/
+        .container {
+            display: grid;
+            height: 80vh;
+            width: 100vw;
+            margin-top: 5%;
+            grid-template-columns: 25% 25% 50%;
+            grid-template-rows: repeat(6, 1fr);
+            grid-template-areas: "balance balance balance"
+                                 "cost cost summary"
+                                 "cost cost number"
+                                 "cost cost breakup"
+                                 "gain circulation breakup"
+                                 ". cancel checkout";
+            place-content: stretch/stretch;
+
+        }
+        .balance {
+            grid-area: balance;
+            align-self: stretch;
+            justify-self: stretch;
+        }
+        .summary {
+            grid-area: summary;
+            align-self: stretch;
+            justify-self: stretch;
+        }
+        .coincost {
+            grid-area: cost;
+            align-self: stretch;
+            justify-self: stretch;
+        }
+        .number {
+            grid-area: number;
+            align-self: stretch;
+            justify-self: stretch;
+        }
+        .circulation {
+            grid-area: circulation;
+            align-self: stretch;
+            justify-self: stretch;
+        }
+        .cancel {
+            grid-area: cancel;
+            align-self: center;
+            justify-self: center;
+        } 
+        .checkout {
+            grid-area: checkout;
+            align-self: center;
+            justify-self: center;
+        }
+        .breakup {
+            grid-area: breakup;
+            align-self: stretch;
+            justify-self: stretch;
+        }
