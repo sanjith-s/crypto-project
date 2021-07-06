@@ -1,0 +1,76 @@
+            @import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+            body {
+                background-color: blueviolet;
+                height: 100vh;
+                width: 100vw;
+            }
+            #login {
+                margin-top: 25px;
+                margin-right: 25px;
+                padding: 10px;
+                float: right;
+                background-color: blueviolet;
+                color: white;
+                height: 30px;
+                font-family: 'Ubuntu';
+                font-size: 16pt;
+                text-decoration: none;
+            }
+            #login:hover {
+                color: blueviolet;
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5%;
+            }
+            #content {
+                margin-top: 10%;
+                margin-left: 10%;
+                height: 200px;
+                width: 800px;
+                color: white;
+            }
+            #logo {
+                font-size: 72pt;
+                font-family: 'Tourney';
+            }
+            #description {
+                margin-left: 50px;
+                font-size: 24pt;
+                font-family: 'Open Sans';
+            }
+            #content-1 {
+                background-color: white;
+                margin-top: 10%;
+                width: 100vw;
+                height: 212px;
+            }
+            #question {
+                display: block;
+                text-align: center;
+                font-size: 28pt;
+                color: blueviolet;
+                font-family: 'open sans';
+            }
+            #list {
+                margin-top: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                color: blueviolet;
+                font-size: 24pt;
+                font-family: 'Ubuntu';
+            }
+            #content-1 span {
+                text-align: center;
+            }
