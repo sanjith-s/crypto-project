@@ -1,8 +1,64 @@
 <DOCTYPE html>
 <html>
 <head>
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+            
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+            body {
+                background-color: blueviolet;
+                height: 100vh;
+                width: 100vw;
+                color: white;
+            }
+            .nav-bar {
+                background-color: blueviolet;
+                display: flex;
+                justify-content: space-between;
+                height: 50px;
+                color: white;
+                font-family: 'Roboto';
+                font-size: 20px;
+                border-bottom: 5px solid white;
+            }
+            nav ul li {
+                display: inline-block;
+                list-style: none;
+                padding: 0 25px 0 25px;
+                height: 50px;
+            }
+            ul {
+                display: flex;
+                height: 50px;
+                align-items: center;
+            }
+            #title {
+                font-size: 32pt;
+                padding-left: 15px;
+                font-family: 'Tourney';
+            }
+            nav li:hover {
+                background-color: white;
+                color: blueviolet;
+            }
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: inherit;
+                margin-top: 10px;
+            }
         fieldset{
             background-color: #f1f1f1;
             border: none;
@@ -29,32 +85,104 @@
             Border-collapse:collapse;
             Text-align:centre;
         }
-        
-
+        #container-1 {
+                background-color: white;
+                height: 600px;
+                width: 600px;
+                box-shadow: 2px 2px 10px black;
+                color: blueviolet;
+                font-family: 'Roboto';
+                padding-left: 20px;
+                font-size: 16pt;
+                padding-right: 10px;
+                margin-top: 4%;
+                border-radius: 5%;
+        }
+        #c1, #c2 {
+            background-color: white;
+                height: 200px;
+                width: 400px;
+                box-shadow: 2px 2px 10px black;
+                color: blueviolet;
+                font-family: 'Roboto';
+                padding-left: 20px;
+                font-size: 24pt;
+                padding-right: 10px;
+                margin-top: 15%;                
+                border-radius: 5%;
+                padding-top: 30px;
+        }
+       #box {
+           display: flex;
+           flex-direction: row;
+           justify-content: space-evenly;
+           font-family: 'Roboto';
+        }
+        .text {
+            display: inline-block;
+            font-size: 24px;
+            height: 36px;
+        }
+        .name {
+            font-size: 32pt;
+        }
+        #login {
+                border: 2px solid blueviolet;
+                background-color: blueviolet;
+                color: white;
+                padding-top: 5px;
+                padding-bottom: 8px;
+                font-family: 'tourney';
+                font-size: 28pt;
+                height: 50px;
+                width: 80%;
+                margin-top: 10%;
+                margin-left: 50px;
+            }
+            #login:hover {
+                background-color: white;
+                border: 2px dashed blueviolet;
+                color: blueviolet;
+            }
+            .details {
+                margin-top: 7%;
+            }
+            .insert {
+                padding-left: 20px;
+                padding-top: 5px;
+            }
     </style>
 
-<title>
-Inventory
-</title>
+<title>Home</title>
 </head>
 <body>
-<label for="username">USERNAME:</label>
-<input type="text" id="username" name="username" readonly><br><br>
-
-<label for="COINS HAVE">COINS YOU HAVE:</label>
-<input type="text" id="COINS HAVE" name="COINS HAVE" readonly>
-<br><br>
-<label for="money">MONEY YOU HAVE:</label>
-<input type="text" id="money" name="money" readonly><br><br>
-
-<table>
-<tr>
-<th width="25%"> NUMBER </th>
-<th width="25%"> STATEMENT </th>
-<th width="25%"> MONEY </th>
-</tr>
-</table>
-
-
+    <header class="nav-bar">
+        <span id="title">Yo Coin</span>
+        <nav>
+            <ul>
+                <li><a href="inventory.html">Home</a></li>
+                <li><a>Activity</a></li>
+                <li><a>Buy</a></li>
+                <li><a>Sell</a></li>
+                <li><a>Transfer</a></li>
+                <li><a>Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+<div id="box">
+<div id="container-1">
+<div style="margin-top: 7%; font-size: 32pt;" >Hello, <span id="name" class="name">Name</span></div> 
+<div class="details">User Name<br><span id="uname" class="insert">insert username</span></div>
+<div class="details">E-mail<br><span id="mail" class="insert">insert email</span></div>
+<div class="details">Contact<br><span id="contact" class="insert">insert contact</span></div>
+<div class="details">Address<br><span id="address" class="insert">insert address</span></div>   
+<button id="login">Edit Profile</button>
+</div>
+<div id="container-2">
+    <div id="c1">Coin Price</div><br><br>
+    <div id="c2">Transaction history</div>
+</div>
+</div>
+</div>
 </body>
 </html>
