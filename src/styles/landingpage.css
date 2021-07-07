@@ -35,7 +35,7 @@
             }
             #content {
                 margin-top: 10%;
-                margin-left: 10%;
+                margin-left: 8%;
                 height: 200px;
                 width: 800px;
                 color: white;
@@ -45,15 +45,15 @@
                 font-family: 'Tourney';
             }
             #description {
-                margin-left: 50px;
+                margin-left: 55px;
                 font-size: 24pt;
                 font-family: 'Open Sans';
             }
             #content-1 {
                 background-color: white;
-                margin-top: 10%;
+                margin-top: 6%;
                 width: 100vw;
-                height: 212px;
+                height: 218px;
             }
             #question {
                 display: block;
@@ -73,4 +73,12 @@
             }
             #content-1 span {
                 text-align: center;
+            }
+            .container {
+                display: flex;
+                flex-direction: row;
+            }
+            .icon {
+                margin-top: 12%;
+                margin-left: 15%;
             }
