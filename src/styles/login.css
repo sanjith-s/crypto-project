@@ -1,0 +1,75 @@
+            @import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+            body {
+                background-color: blueviolet;
+                height: 100vh;
+                width: 100vw;
+            }
+            #logo {
+                font-family: 'Tourney';
+                font-size: 68pt;
+                float: left;
+                color: white;
+            }
+            #title {
+                margin-top: 10%;
+                font-family: 'Tourney';
+                font-size: 42pt;
+                text-align: center;
+                color: white;
+            }
+            #content {
+                background-color: white;
+                height: 400px;
+                width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 2%;
+                box-shadow: 2px 7px 10px black;
+                color: blueviolet;
+                font-family: 'Ubuntu';
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding-left: 20px;
+                font-size: 16pt;
+                padding-right: 10px;
+            }
+            #mail, #pass {
+                margin-left: 35px;
+                font-size: 14pt;
+                color: blueviolet;
+                border: 2px dashed blueviolet;
+                padding: 2px;
+            }
+            #signin {
+                font-size: 12pt;
+                align-self: end;
+        
+            }
+            #login {
+                border: 2px solid blueviolet;
+                background-color: blueviolet;
+                color: white;
+                padding-top: 5px;
+                padding-bottom: 8px;
+                font-family: 'TOURNEY';
+                font-size: 28pt;
+                height: 50px;
+            }
+            #login:hover {
+                background-color: white;
+                border: 2px dashed blueviolet;
+                color: blueviolet;
+            }
+    
