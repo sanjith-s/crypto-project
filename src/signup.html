@@ -4,40 +4,51 @@
 <head>
     <title>Sign-Up</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/signup.css">
 </head>
 
 <body>
-    <span id="title">Yo Coin</span><br><br>
-    <form method="POST" onsubmit="loginAction()">
+    <div id="logo">Yo Coin</div><br><br>
+    <div id="title">Sign Up</div>
+    <div id="content">
+        <div id ="g1">
         <label for="user">
-            User Name <input id="user" type="text" required>
+            User Name <br><input id="user" type="text" required>
         </label><br><br>
         <label for="mail">
-            Email Address <input id="mail" type="email" required>
+            Email Address <br><input id="mail" type="email" required>
         </label><br><br>
-        <label for="password">
-            Create New Password <input id="pass1" type="password" required onkeydown="validatePass();">
+        <label for="pass1">
+            Create New Password <br><input id="pass1" class="pass" type="password" required onkeydown="validatePass();">
         </label><br><br>
-        <label for="confirm-password">
-            Confirm Your Password <input id="pass2" type="password" required onkeydown="matchPass();">
-        </label><br><br>
+        <label for="pass2">
+            Confirm Your Password <br><input id="pass2" class="pass" type="password" required onkeydown="matchPass();">
+        </label><br><br></div>
         <!-- <label for="age">
             Date of Birth <input id="age" type="date" required>
         </label><br><br> -->
-        <label for="check">
+        <div id="g2">
+            <ul>
+                <li>Your must be 16years or old</li><br><br>
+                <li>Your password must be<br>1. 8-16 characters long.<br>2. Contain a uppercase letter, lowercase letter<br>3. Contain a number<br>4. Contain a special character</li>
+            </ul>
+        </div>
+        <div id="g3">
+        <label id="checkbx" for="check">
             <input type="checkbox" id="check" onclick="checkMe()"> By clicking, I agree to the terms and conditions and privacy policy.
         </label><br><br>
-        <button id="submit" type="submit" disabled>Sign Up!</button>
-    </form>
+        <button id="login" type="submit" disabled onclick="loginAction()">Sign Up!</button>
+        </div>
+    </div>
 </body>
 <script>
     function checkMe() {
         let val = document.getElementById("check").checked;
 
         if (val) {
-            document.getElementById("submit").removeAttribute("disabled");
+            document.getElementById("login").removeAttribute("disabled");
         } else {
-            document.getElementById("submit").setAttribute("disabled", "");
+            document.getElementById("login").setAttribute("disabled", "");
         }
     }
 
@@ -81,19 +92,23 @@
         let passregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
         let result = passregex.test(password);
         if (!result) {
-            console.log("fail");
+            document.getElementById("pass1").className = 'fail';
         } else {
-            console.log("success");
+            document.getElementById("pass1").className = 'success';
         }
     }
 
     function matchPass() {
         let pass1 = document.getElementById("pass1").value;
         let pass2 = document.getElementById("pass2").value;
+        console.log(pass1);
+        console.log(pass2);
         if (pass1 != pass2) {
-            console.log("Match");
+            console.log("nomatch");
+            document.getElementById("pass2").className = 'fail';
         } else {
-            console.log("No match");
+            console.log("match");
+            document.getElementById("pass2").className = 'success';
         }
     }
 </script>
