@@ -1,0 +1,58 @@
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+            
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+            body {
+                background-color: blueviolet;
+                height: 100vh;
+                width: 100vw;
+                color: white;
+            }
+            #logo {
+               font-family: 'Tourney';
+                font-size: 68pt;
+                float: left;
+                color: blueviolet;
+                 background-color:white;
+                 margin: 8px;
+                 padding: 2px;
+                 border-radius: 5px;
+            }
+            #content {
+                font-family: 'Roboto';
+                font-size: 28pt;
+                margin-top: 15%;
+                text-align: center;
+                background-color: blueviolet;
+                display: inline-block;
+                margin-left: 8%;
+                border-radius: 2%;
+            }
+             #wrapper {
+                background: url(hellocoin.png);
+                height: 100vh;
+                width: 100vw;
+                background-repeat: repeat round;
+                animation: bgani 80s linear infinite;
+                background-size: 200px 200px;
+            }
+            @keyframes bgani {
+
+                0% {
+                    background-position: top right;
+                }
+                100% {
+                    background-position: bottom left;
+                }
+            }

@@ -8,39 +8,43 @@
 </head>
 
 <body>
-    <div id="logo">Yo Coin</div><br><br>
+    <div id="wrapper"><div id="logo">Yo Coin</div><br><br>
     <div id="title">Sign Up</div>
     <div id="content">
-        <div id ="g1">
-        <label for="user">
-            User Name <br><input id="user" type="text" required>
-        </label><br><br>
-        <label for="mail">
-            Email Address <br><input id="mail" type="email" required>
-        </label><br><br>
-        <label for="pass1">
-            Create New Password <br><input id="pass1" class="pass" type="password" required onkeyup="validatePass();">
-        </label><br><br>
-        <label for="pass2">
-            Confirm Your Password <br><input id="pass2" class="pass" type="password" required onkeyup="matchPass();">
-        </label><br><br></div>
+        <div id="g1">
+            <label for="user">
+                User Name <br><input id="user" type="text" required>
+            </label>
+            <label for="mail">
+                Email Address <br><input id="mail" type="email" required>
+            </label>
+            <label for="pass1">
+                Create New Password <br><input id="pass1" class="pass" type="password" required onkeyup="validatePass();">
+            </label>
+            <label for="pass2">
+                Confirm Your Password <br><input id="pass2" class="pass" type="password" required onkeyup="matchPass();">
+            </label>
+        </div>
         <!-- <label for="age">
-            Date of Birth <input id="age" type="date" required>
-        </label><br><br> -->
+                Date of Birth <input id="age" type="date" required>
+            </label><br><br> -->
         <div id="g2">
             <ul>
                 <li>Your must be 16 years or older.</li><br><br>
-                <li>Your password must be<br>1. 8-16 characters long.<br>2. Contain a uppercase letter, lowercase letter.<br>3. Contain a number.<br>4. Contain a special character.</li><br><br>
+                <li>Your password must be<br>1. 8-16 characters long.<br>2. Contain a uppercase letter, lowercase
+                    letter.<br>3. Contain a number.<br>4. Contain a special character.</li><br><br>
                 <li>Your passwords must match.</li>
             </ul>
         </div>
         <div id="g3">
-        <label id="checkbx" for="check">
-            <input type="checkbox" id="check" onclick="checkMe()"> By clicking, I agree to the terms and conditions and privacy policy.
-        </label><br><br>
-        <button id="login" type="submit" disabled onclick="loginAction()">Sign Up!</button>
+            <label id="checkbx" for="check">
+                <input type="checkbox" id="check" onclick="checkMe()"> By clicking, I agree to the terms and conditions and
+                privacy policy.
+            </label><br><br>
+            <button id="login" type="submit" disabled onclick="loginAction()">Sign Up!</button>
         </div>
-    </div>
+    </div></div>
+    
 </body>
 <script>
     function checkMe() {

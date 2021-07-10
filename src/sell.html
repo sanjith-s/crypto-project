@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Buy Coins!</title>
+    <title>Sell coins!</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles/buy.css">
 </head>
@@ -13,7 +13,7 @@
         <nav>
             <ul>
                 <li><a href="inventory.html">Home</a></li>
-                <li><a href="activity.html">Activity</a></li>
+                <li><a  href="activity.html">Activity</a></li>
                 <li><a href="buy.html">Buy</a></li>
                 <li><a href="sell.html">Sell</a></li>
                 <li><a href="transfer.html">Transfer</a></li>
@@ -22,22 +22,22 @@
         </nav>
     </header>
     <div class="container">
-        <div id="flex-1" class="balance"><div>Balance:<span style="padding-left: 15px;font-family: 'Staatliches'; font-size: 28pt;" id="mybalance">500</span> YoCoins</div><div>Tax:<span style="padding-left: 15px;font-family: 'Staatliches'; font-size: 28pt;" id="tax">20</span></div></div>
+        <div id="flex-1" class="balance"><div>Balance:<span id="balance"><span style="padding-left: 15px;font-family: 'Staatliches'; font-size: 28pt;" id="mybalance">500</span> YoCoins</div><div>Service Tax:<span style="padding-left: 15px;font-family: 'Staatliches'; font-size: 28pt;" id="tax">20</span></div></div>
         <div class="summary">Order Summary</div>
         <div class="breakup">
         <table style="height: 100%; width: 100%;">
             <tr><th style="text-align: center;" colspan="2">Order Breakup</th></tr>
             <tr><td>Base Price</td><td id="base" width="50%">0</td></tr>
-            <tr><td>Tax</td><td id="mytax">0</td></tr>
+            <tr><td>Service Tax</td><td id="mytax">0</td></tr>
             <tr><td>You Pay</td><td id="total">0</td></tr>
             
         </table></div>
-        <div class="number">You Ordered: <input id="coin-num" type="number" value="0" min=1 max=999 onchange="myCalc();"> YoCoins</div>
+        <div class="number">You sell: <input id="coin-num" type="number" value="0" min=1 max=999 onchange="myCalc();"> YoCoins</div>
         <div class="coincost">Coin Cost<br><div style="padding-left: 5%; padding-top: 5%;">1 YoCoin = <br>
         <div style="font-family: 'Staatliches'; font-size: 84pt; padding-left: 20%; " id="ccost">100</div></div></div>
         <div class="gain">Earnings this month</div>
         <div class="circulation">Coins in circulation</div>
-        <button class="cancel button"><a href="inventory.html">Cancel Order</a></button>
+        <button class="cancel button"><a href="inventory.html">Cancel Sale</a></button>
         <button class="checkout button">Checkout</button>
     </div>
     <script>

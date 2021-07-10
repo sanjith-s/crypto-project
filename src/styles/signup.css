@@ -20,7 +20,11 @@
                 font-family: 'Tourney';
                 font-size: 68pt;
                 float: left;
-                color: white;
+                color: blueviolet;
+                 background-color:white;
+                 margin: 8px;
+                 padding: 2px;
+                 border-radius: 5px;
             }
             #title {
                 margin-top: 5%;
@@ -28,11 +32,13 @@
                 font-size: 42pt;
                 text-align: center;
                 color: white;
+                display: inline-block;
+                margin-left: 20%;
             }
             #content {
                 background-color: white;
-                height: 535px;
-                width: 500px;
+                height: 525px;
+                width: 575px;
                 margin-top: 1%;
                 margin-left: auto;
                 margin-right: auto;
@@ -54,6 +60,8 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 grid-area: grid1;
+                height: 100%;
+                width: 100%;
             }
             #g2 {
                 grid-area: grid2;
@@ -127,4 +135,21 @@
                 padding: 2px;
                 margin-top: 10px;
                 margin-left: 10px;
+            }
+            #wrapper {
+                background: url(hellocoin.png);
+                height: 100vh;
+                width: 100vw;
+                background-repeat: repeat round;
+                animation: bgani 80s linear infinite;
+                background-size: 200px 200px;
+            }
+            @keyframes bgani {
+
+                0% {
+                    background-position: top right;
+                }
+                100% {
+                    background-position: bottom left;
+                }
             }

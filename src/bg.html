@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Background
+        </title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+            body {
+                background-color: blueviolet;
+                height: 100vh;
+                width: 100vw;
+            }
+            #wrapper {
+                background: url(./assets/hellocoin.png);
+                height: 100vh;
+                width: 100vw;
+                background-repeat: repeat round;
+                animation: bgani 90s linear infinite;
+                background-size: 200px 200px;
+            }
+            @keyframes bgani {
+
+                0% {
+                    background-position: top right;
+                }
+                100% {
+                    background-position: bottom left;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper"></div>
+
+        </div>
+    </body>
+</html>
