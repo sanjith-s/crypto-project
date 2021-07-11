@@ -8,43 +8,47 @@
 </head>
 
 <body>
-    <div id="wrapper"><div id="logo">Yo Coin</div><br><br>
-    <div id="title">Sign Up</div>
-    <div id="content">
-        <div id="g1">
-            <label for="user">
+    <div id="wrapper">
+        <div id="logo">Yo Coin</div><br><br>
+        <div id="title">Sign Up</div>
+        <div id="content">
+            <div id="g1">
+                <label for="user">
                 User Name <br><input id="user" type="text" required>
             </label>
-            <label for="mail">
+                <label for="mail">
                 Email Address <br><input id="mail" type="email" required>
             </label>
-            <label for="pass1">
-                Create New Password <br><input id="pass1" class="pass" type="password" required onkeyup="validatePass();">
+                <label for="pass1">
+                <!-- Create New Password <br><input id="pass1" class="pass" type="password" required onkeyup="validatePass();"> -->
+                Create New Password <br><input id="pass1" class="pass" type="password" required >
             </label>
-            <label for="pass2">
-                Confirm Your Password <br><input id="pass2" class="pass" type="password" required onkeyup="matchPass();">
+                <label for="pass2">
+                Confirm Your Password <br><input id="pass2" class="pass" type="password" required >
+                <!-- Confirm Your Password <br><input id="pass2" class="pass" type="password" required onkeyup="matchPass();"> -->
             </label>
-        </div>
-        <!-- <label for="age">
+            </div>
+            <!-- <label for="age">
                 Date of Birth <input id="age" type="date" required>
             </label><br><br> -->
-        <div id="g2">
-            <ul>
-                <li>Your must be 16 years or older.</li><br><br>
-                <li>Your password must be<br>1. 8-16 characters long.<br>2. Contain a uppercase letter, lowercase
-                    letter.<br>3. Contain a number.<br>4. Contain a special character.</li><br><br>
-                <li>Your passwords must match.</li>
-            </ul>
-        </div>
-        <div id="g3">
-            <label id="checkbx" for="check">
+            <div id="g2">
+                <ul>
+                    <li>Your must be 16 years or older.</li><br><br>
+                    <li>Your password must be<br>1. 8-16 characters long.<br>2. Contain a uppercase letter, lowercase letter.
+                        <br>3. Contain a number.<br>4. Contain a special character.</li><br><br>
+                    <li>Your passwords must match.</li>
+                </ul>
+            </div>
+            <div id="g3">
+                <label id="checkbx" for="check">
                 <input type="checkbox" id="check" onclick="checkMe()"> By clicking, I agree to the terms and conditions and
                 privacy policy.
             </label><br><br>
-            <button id="login" type="submit" disabled onclick="loginAction()">Sign Up!</button>
+                <button id="login" type="submit" disabled onclick="loginAction()">Sign Up!</button>
+            </div>
         </div>
-    </div></div>
-    
+    </div>
+
 </body>
 <script>
     function checkMe() {
@@ -61,36 +65,20 @@
         let usr = document.getElementById("user").value;
         let pass = document.getElementById("pass1").value;
         let emailID = document.getElementById("mail").value;
-        // var http = new XMLHttpRequest();;
-        // xhr.open('POST', 'http: //127.0.0.1/register.php');
-        // http.onload = function() {
-        //     console.log(this.responseText)
-        // };
-        // http.send('username=usr&password=pass&email=emailID');
-
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseText)
-            } else {
-                console.log(this.responseText)
+        xmlhttp.onload = function() {
+            if (this.status == 200) {
+                let res = xmlhttp.responseText;
+                let entry = JSON.parse(res);
+                if (entry.accessClear == 1) {
+                    sessionStorage.setItem('email', emailID);
+                    window.location.href = "http://127.0.0.1/src/inventory.html";
+                }
             }
         }
-        xmlhttp.open("GET", "register.php?username=" + usr + "&password=" + pass + "&email" + emailID, true);
+        xmlhttp.open("POST", "http://127.0.0.1/src/scripts/register.php?username=" + usr + "&pass=" + pass + "&email=" + emailID, true);
         xmlhttp.send();
     }
-    // function validate() {
-    //     let value = document.getElementById("age").value;
-    //     let date = new Date(value);
-    //     let diff = new Date(Date.now() - date.getTime());
-    //     let age = diff.getFullYear() - 1970;
-    //     if (age >= 16) {
-    //         return true;
-    //     } else {
-    //         alert("You must be 16 years or older to access the website");
-    //         return false;
-    //     }
-    // }
 
     function validatePass() {
         let password = document.getElementById("pass1").value;
@@ -106,13 +94,9 @@
     function matchPass() {
         let pass1 = document.getElementById("pass1").value;
         let pass2 = document.getElementById("pass2").value;
-        console.log(pass1);
-        console.log(pass2);
         if (pass1 != pass2) {
-            console.log("nomatch");
             document.getElementById("pass2").className = 'fail';
         } else {
-            console.log("match");
             document.getElementById("pass2").className = 'success';
         }
     }

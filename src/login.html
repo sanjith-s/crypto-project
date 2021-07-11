@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Login</title>
-<link rel="stylesheet" href="./styles/login.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="./styles/login.css">
 </head>
+
 <body>
 <div id="wrapper">
     <div id="logo">Yo Coin</div><br>
@@ -12,9 +14,30 @@
         <label for="mail">E-mail <br><br><input type="email" id="mail" name="mail"></label>
         <label for="pass">Password <br><br><input type="password" id="pass" name="pass"></label>
         <a id="signin" href="signup.html">Not yet registered? Sign Up.</a>
-        
+        <button id="login" onclick="check()">Login</button>
     </div>
-</div>
-
 </body>
+
+<script>
+    function check() {
+        let emailID = document.getElementById("mail").value;
+        let pass = document.getElementById("pass").value;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            console.log(xmlhttp.responseText)
+            if (this.status == 200) {
+                let res = xmlhttp.responseText;
+                let entry = JSON.parse(res);
+                if (entry.accessClear == 1) {
+                    sessionStorage.setItem('email', emailID);
+                    window.location.href = "http://127.0.0.1/src/inventory.html";
+                }
+            }
+        }
+        xmlhttp.open("POST", "http://127.0.0.1/src/scripts/login.php?email=" + emailID + "&pass=" + pass, true);
+        xmlhttp.send();
+
+    }
+</script>
+
 </html>

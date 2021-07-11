@@ -1,8 +1,5 @@
 <DOCTYPE html>
-<html>
-<head>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="./styles/inventory.css">
+    <html>
 
 <title>Home</title>
 </head>
@@ -51,6 +48,22 @@
     } else {
         document.getElementById("greetings").innerHTML = "Good Evening";
     }
+    window.onload = function () {
+            let emailID = sessionStorage.getItem('email');;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function () {
+                if (this.status == 200) {
+                    let res = xmlhttp.responseText;
+                    let entry = JSON.parse(res);
+                    console.log(this.responseText)
+                    console.log(entry[0].email)
+                    document.getElementById("uname").innerText = entry[0].username;
+                    document.getElementById("mail").innerText = entry[0].email
+                }
+            }
+            xmlhttp.open("POST", "http://127.0.0.1/src/scripts/userDetails.php?email=" + emailID, true);
+            xmlhttp.send();
+        };
 
 </script>
 </html>
