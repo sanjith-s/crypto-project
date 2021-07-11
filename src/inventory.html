@@ -21,7 +21,7 @@
         </header>
         <div id="box">
             <div id="container-1">
-                <div style="margin-top: 7%; font-size: 32pt;"><span id="greetings">Hello</span>, <span id="name" class="name">John Doe</span></div>
+                <div style="margin-top: 7%; font-size: 32pt;"><span id="greetings">Hello</span></div>
                 <div class="details">User Name<br><span id="uname" class="insert">insert username</span></div>
                 <div class="details">E-mail<br><span id="mail" class="insert">insert email</span></div>
                 <div class="details">Contact<br><span id="contact" class="insert">insert contact</span></div>
@@ -57,10 +57,9 @@
                 if (this.status == 200) {
                     let res = xmlhttp.responseText;
                     let entry = JSON.parse(res);
-                    console.log(this.responseText)
-                    console.log(entry[0].email)
                     document.getElementById("uname").innerText = entry[0].username;
                     document.getElementById("mail").innerText = entry[0].email
+                    document.getElementById("contact").innerText = entry[0].phoneNo;
                 }
             }
             xmlhttp.open("POST", "http://127.0.0.1/src/scripts/userDetails.php?email=" + emailID, true);

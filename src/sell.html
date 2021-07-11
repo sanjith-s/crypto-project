@@ -56,25 +56,26 @@
         <div class="gain">Earnings this month</div>
         <div class="circulation">Coins in circulation</div>
         <button class="cancel button"><a href="inventory.html">Cancel Sale</a></button>
-        <button class="checkout button">Checkout</button>
+        <button class="checkout button" onclick="sell()">Checkout</button>
     </div>
     <script>
-        window.onload = function() {
-            let emailID = sessionStorage.getItem('email');;
+        let finCost;
+
+        function sell() {
+            let coins = document.getElementById("coin-num").value;
+            let email = sessionStorage.getItem('email');
+            console.log(coins + email + finCost)
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onload = function() {
                 if (this.status == 200) {
                     let res = xmlhttp.responseText;
                     let entry = JSON.parse(res);
-                    console.log(this.responseText)
-                    console.log(entry[0].email)
-                    document.getElementById("uname").innerText = entry[0].username;
-                    document.getElementById("mail").innerText = entry[0].email
+                    console.log(entry)
                 }
             }
-            xmlhttp.open("POST", "http://127.0.0.1/src/scripts/details.php?email=" + emailID, true);
+            xmlhttp.open("POST", "http://127.0.0.1/src/scripts/sell.php?email=" + email + "&coins=" + coins + "&money=" + finCost, true);
             xmlhttp.send();
-        };
+        }
 
         function myCalc() {
             let base = Number(document.getElementById("coin-num").value);
@@ -86,6 +87,7 @@
             tax *= base;
             document.getElementById('mytax').innerHTML = `${tax}`;
             let total = base + tax;
+            finCost = total;
             document.getElementById('total').innerHTML = `${total}`;
         }
     </script>
