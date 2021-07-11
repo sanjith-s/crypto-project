@@ -1,53 +1,57 @@
 <DOCTYPE html>
     <html>
 
-    <head>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="./styles/inventory.css">
-
-        <title>Home</title>
-    </head>
-
-    <body>
-        <header class="nav-bar">
-            <span id="title">Yo Coin</span>
-            <nav>
-                <ul>
-                    <li><a href="inventory.html">Home</a></li>
-                    <li><a href="activity.html">Activity</a></li>
-                    <li><a href="buy.html">Buy</a></li>
-                    <li><a href="sell.html">Sell</a></li>
-                    <li><a href="transfer.html">Transfer</a></li>
-                    <li><a href="logout.html">Logout</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div id="box">
-            <div id="container-1">
-                <div style="margin-top: 7%; font-size: 32pt;">Hello, <span id="name" class="name">Name</span></div>
-                <div class="details">User Name<br><span id="uname" class="insert"></span></div>
-                <div class="details">E-mail<br><span id="mail" class="insert"></span></div>
-                <div class="details">Contact<br><span id="contact" class="insert">insert contact</span></div>
-                <div class="details">Address<br><span id="address" class="insert">insert address</span></div>
-                <button id="login">Edit Profile</button>
+<title>Home</title>
+</head>
+<body>
+    <header class="nav-bar">
+        <span id="title">Yo Coin</span>
+        <nav>
+            <ul>
+                <li><a href="inventory.html">Home</a></li>
+                <li><a href="activity.html">Activity</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="transfer.html">Transfer</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+<div id="box">
+<div id="container-1">
+<div style="margin-top: 7%; font-size: 32pt;" ><span id="greetings">Hello</span>, <span id="name" class="name">John Doe</span></div> 
+<div class="details">User Name<br><span id="uname" class="insert">insert username</span></div>
+<div class="details">E-mail<br><span id="mail" class="insert">insert email</span></div>
+<div class="details">Contact<br><span id="contact" class="insert">insert contact</span></div>
+<div class="details">Address<br><span id="address" class="insert">insert address</span></div>   
+<button id="login">Edit Profile</button>
+</div>
+<div id="container-2">
+    <div id="c1">
+        <div class="coincost">Coin Cost<br>
+            <div style="padding-left: 5%; padding-top: 5%;">1 YoCoin = <br>
+                <div style="font-family: 'Staatliches'; font-size: 48pt; padding-left: 30%; " id="ccost">100</div>
             </div>
-            <div id="container-2">
-                <div id="c1">
-                    <div class="coincost">Coin Cost<br>
-                        <div style="padding-left: 5%; padding-top: 5%;">1 YoCoin = <br>
-                            <div style="font-family: 'Staatliches'; font-size: 48pt; padding-left: 20%; " id="ccost">100</div>
-                        </div>
-                    </div><br><br>
-                    <div id="c2">Recent Transactions</div>
-                </div>
-            </div>
-        </div>
-    </body>
-    <script>
-        window.onload = function() {
+    </div><br><br>
+    <div id="c2">Recent Transactions</div>
+</div>
+</div>
+</div>
+</body>
+<script>
+    let time = new Date();
+    let hours = time.getHours();
+    if (hours >= 5 && hours <= 11) {
+        document.getElementById("greetings").innerHTML = "Good Morning"; 
+    } else if (hours >= 12 && hours <= 16) {
+        document.getElementById("greetings").innerHTML = "Good Afternoon";
+    } else {
+        document.getElementById("greetings").innerHTML = "Good Evening";
+    }
+    window.onload = function () {
             let emailID = sessionStorage.getItem('email');;
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onload = function() {
+            xmlhttp.onload = function () {
                 if (this.status == 200) {
                     let res = xmlhttp.responseText;
                     let entry = JSON.parse(res);
@@ -60,6 +64,6 @@
             xmlhttp.open("POST", "http://127.0.0.1/src/scripts/userDetails.php?email=" + emailID, true);
             xmlhttp.send();
         };
-    </script>
 
-    </html>
+</script>
+</html>

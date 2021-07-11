@@ -2,48 +2,37 @@
 <html>
 <head>
 <title>
-REGISTRATION
+Registration Form
 </title>
-<style>
-        fieldset{
-            background-color: #f1f1f1;
-            border: none;
-            border-radius: 2px;
-            margin-bottom: 12px;
-            overflow: hidden;
-            padding: 0 .625em;
+<link rel="stylesheet" href="./styles/registration.css">
+<script>
+    function validate() {
+            let value = document.getElementById("age").value;
+            let date = new Date(value);
+            let diff = new Date(Date.now() - date.getTime());
+            let age = diff.getFullYear() - 1970;
+            if (age >= 16) {
+                return true;
+            } else {
+                alert("You must be 16 years or older to access the website");
+                return false;
+            }
         }
-
-        label{
-            cursor: pointer;
-            display: inline-block;
-            padding: 3px 6px;
-            text-align: right;
-            width: 150px;
-            vertical-align: top;
-        }
-
-        input{
-            font-size: inherit;
-        }
-</style>
+</script>
 </head>
 <body>
-<div>
-<h1 style="text-align:center">Registration Form</h1>
-<label for="name">NAME:</label>
-<input type="name" placeholder="enter name" id="name" name="name"><br><br>
-<label for="mail">E-mail: </label>
-<input type="email" id="mail" name="mail" placeholder="enter mail id"><br><br>
-<label for="dob">DATE OF BIRTH:</label>
-<input type="date" id="dob" name="dob"><br><br>
-<label for="number">PHONE NUMBER:</label>
-<input type="text" id="number" name="number" placeholder="enter phone number with country code" size="35px"><br><br>
-<label for="PINCODE">PINCODE:</label>
-<input type="text" id="PINCODE" name="PINCODE" placeholder="enter pincode"><br><br>
-
-<input type="submit" value="submit" onclick="location.href='inventory.html'" >
-
+<div id="wrapper">
+    <div id="logo">Yo Coin</div><br>
+<div id="title">Registration Form</div><br>
+<div id="content">
+    <label for="name">Name: <br><input type="name" id="name" name="name"></label>
+    <label for="mail">E-mail: <br><input type="email" id="mail" name="mail"></label>
+    <label for="dob">Date of Birth: <br><input type="date" id="dob" onchange="validate();"></label><br>
+    <label for="number">Mobile Number: <br><input type="text" id="number" name="number"> <br></label>
+    <label for="pincode">Address: <br><textarea></textarea></label>
+    <button id="login" onclick='location.href="inventory.html"'>Register</button>
+    </div>
+</div>
 </div>
 </body>
 </html>

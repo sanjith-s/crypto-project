@@ -72,7 +72,10 @@ Transfer Coins
             padding: 20px;
             border-radius: 2%;
             font-family: 'Poppins';
-            font-size: 16pt;   
+            font-size: 16pt;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;   
             }
             .button {
                 border: 2px solid blueviolet;
@@ -82,8 +85,15 @@ Transfer Coins
                 font-size: 18pt;
                 height: 50px;
                 padding: 2px 2px 2px 2px ;
-                margin-left: 43%;
+                margin-left: 20%;
                 margin-top: 5%;
+                margin-right: 20%;
+            }
+            #f2 {
+                margin-right: 15%;
+            }
+            #f1 {
+                margin-left: 5%;
             }
             .button:hover {
                 background-color: white;
@@ -106,6 +116,11 @@ Transfer Coins
                 border: 2px dashed blueviolet;
                 resize: none;
             }
+            #fc {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
 </style>
 </head>
 <body>
@@ -124,15 +139,18 @@ Transfer Coins
     </header>
 <div id="container">
 <span style="text-align:center; width: 100%; display: inline-block; font-size: 32pt;">Transfer Coins</span><br>
-Balance:<span style="padding-left: 15px;font-family: 'Staatliches'; font-size: 28pt;" id="mybalance">500</span>&nbsp;YoCoins<br><br>
-<div id="content"><label for="user">User Id of beneficiary:</label><br>
-<input type="text" id="user" name="user-id"><br>
-<label for="coin">Coins</label><br>
-<input id="coin-num" type="number" value="0" min=1 max=999>Yo Coins<br>
-<label for="description">Message</label><br>
-<textarea id="description" name="description"></textarea><br>
-<label for="pass">Confirm your password</label><br>
-<input type="password" name="pass" id="pass">
+<div style="margin-left: 5%;">Balance:<span style="padding-left: 15px;font-family: 'Staatliches'; font-size: 28pt;"
+    id="mybalance">500</span>&nbsp;YoCoins</div><br>
+<div id="fc">
+    <div id="f1"><label for="user">User Id of beneficiary:<br><input type="text" id="user" name="user-id"></label><br><br>
+        <label for="coin">Coins:<br><input id="coin-num" type="number" value="0" min=1 max=999>Yo Coins</label><br>
+    </div>
+    <div id="f2">
+        <label for="description">Message:</label><br>
+        <textarea id="description" name="description"></textarea><br><br>
+        <label for="pass">Confirm your password:</label><br>
+        <input type="password" name="pass" id="pass">
+    </div>
 </div>
 <button class="button">Transfer Now</button>
 </div>
