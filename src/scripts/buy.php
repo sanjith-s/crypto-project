@@ -9,8 +9,10 @@ $dataBase = dbConnection();
 $res = $dataBase->query("select balance,coinCount from user where email = '$emailID'");
 $res->setFetchMode(PDO::FETCH_ASSOC);
 $rows = $res->fetchAll(); 
-
+$balance = $rows[0]->balance;
 $remainingBalance = $balance - $moneyDebited;
-$finCoinCount = 
-$res = $dataBase->exec("update into user (coinCount,balance) values(') where email ='$emailID' ");
+$currCoinCount = $rows[0]->coinCount;
+$finCoinCount = $currCoinCount + $noOfCoins;
+$res = $dataBase->exec("update into user (coinCount,balance) values('$finCoinCount','$remainingBalance') where email ='$emailID' ");
+
 ?>
