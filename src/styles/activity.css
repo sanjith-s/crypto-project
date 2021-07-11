@@ -54,18 +54,14 @@
                 color: inherit;
                 margin-top: 10px;
             }
-            #graph {
-                margin-top: 5%;
-                display: inline-block;
-                margin-left: 35%;
-            }
             #history {
                 color: #8a2be2;
                 background-color: white;
                 width: 80vw;
                 font-family: 'Roboto';
                 font-size: 32pt;
-                border: 5px solid white;
+                border-radius: 2%;
+                box-shadow: 2px 7px 10px black;
                 margin-left: 11%;
                 margin-top: 5%;
                 text-align: center;
