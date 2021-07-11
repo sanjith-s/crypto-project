@@ -7,10 +7,7 @@ Registration Form
 <link rel="stylesheet" href="./styles/registration.css">
 <script>
     function validate() {
-            let value = document.getElementById("age").value;
-            let date = new Date(value);
-            let diff = new Date(Date.now() - date.getTime());
-            let age = diff.getFullYear() - 1970;
+            let value = +(document.getElementById("age").value);
             if (age >= 16) {
                 return true;
             } else {
@@ -18,6 +15,22 @@ Registration Form
                 return false;
             }
         }
+	function myRegister() {
+		let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let mobile = document.getElementById("number").value;
+		let address = document.getElementById("address").innerHTML;
+		let emailID = sessionStorage.getItem('email');
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            if (this.status == 200) {
+                   window.location.href = "http://localhost:81/src/inventory.html";
+            }
+        }
+        xmlhttp.open("POST", "http://localhost:81/src/scripts/registerform.php?name=" + name + "&age=" + age + "&mobile=" + mobile+ "&address=" + address + "&email=" + emailID, true);
+        xmlhttp.send();
+	}	
+		
 </script>
 </head>
 <body>
@@ -26,11 +39,10 @@ Registration Form
 <div id="title">Registration Form</div><br>
 <div id="content">
     <label for="name">Name: <br><input type="name" id="name" name="name"></label>
-    <label for="mail">E-mail: <br><input type="email" id="mail" name="mail"></label>
-    <label for="dob">Date of Birth: <br><input type="date" id="dob" onchange="validate();"></label><br>
+    <label for="age">Age: <br><input type="text" id="age"></label>
     <label for="number">Mobile Number: <br><input type="text" id="number" name="number"> <br></label>
-    <label for="pincode">Address: <br><textarea></textarea></label>
-    <button id="login" onclick='location.href="inventory.html"'>Register</button>
+    <label for="address">Address: <br><textarea id="address"></textarea></label>
+    <button id="login" onclick='myRegister()'>Register</button>
     </div>
 </div>
 </div>

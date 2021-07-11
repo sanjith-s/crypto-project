@@ -50,7 +50,7 @@
         } else {
             document.getElementById("greetings").innerHTML = "Good Evening";
         }
-        /*window.onload = function() {
+        window.onload = function() {
             let emailID = sessionStorage.getItem('email');;
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onload = function() {
@@ -60,12 +60,15 @@
                     console.log(this.responseText)
                     console.log(entry[0].email)
                     document.getElementById("uname").innerText = entry[0].username;
-                    document.getElementById("mail").innerText = entry[0].email
+                    document.getElementById("mail").innerText = entry[0].email;
+                    document.getElementById("name").innerText = entry[0].name;
+                    document.getElementById("contact").innerText = entry[0].contact;
+                    document.getElementById("address").innerText = entry[0].address;
                 }
             }
-            xmlhttp.open("POST", "http://127.0.0.1/src/scripts/userDetails.php?email=" + emailID, true);
+            xmlhttp.open("POST", "http://localhost:81/src/scripts/userDetails.php?email=" + emailID, true);
             xmlhttp.send();
-        };*/
+        };
          let content = document.getElementById("container-1").innerHTML;
             console.log(content);
             let edit = `<div style='margin-top: 3%; font-size: 32pt; text-align: center'>Edit Profile</div>

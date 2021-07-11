@@ -27,9 +27,9 @@
                 <!-- Confirm Your Password <br><input id="pass2" class="pass" type="password" required > -->
                 Confirm Your Password <br><input id="pass2" class="pass" type="password" required onkeyup="matchPass();">
             </label>
-            <!--<label for="name">Name: <br><input type="name" id="name" name="name"></label>
+            <label for="name">Name: <br><input type="name" id="name" name="name"></label>
             <label for="age">Age: <br><input type="text" id="age"></label>
-            <label for="number">Mobile Number: <br><input type="text" id="number" name="number"> <br></label>-->
+            <label for="number">Mobile Number: <br><input type="text" id="number" name="number"> <br></label>
             </div>
             <!-- <label for="age">
                 Date of Birth <input id="age" type="date" required>
@@ -68,10 +68,10 @@
         let usr = document.getElementById("user").value;
         let pass = document.getElementById("pass1").value;
         let emailID = document.getElementById("mail").value;
-        //let name = document.getElementById("name").value;
-        //let age = document.getElementById("age").value;
-        //let mobile = document.getElementById("number").value;
-        //console.log(name);
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let mobile = document.getElementById("number").value;
+        console.log(name);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function() {
             if (this.status == 200) {
@@ -84,7 +84,7 @@
                 }
             }
         }
-        xmlhttp.open("POST", "http://localhost:81/src/scripts/register.php?username=" + usr + "&pass=" + pass + "&email=" + emailID, true);
+        xmlhttp.open("POST", "http://localhost:81/src/scripts/register.php?username=" + usr + "&mobile=" + mobile + "&name=" + name + "&age=" + age + "&pass=" + pass + "&email=" + emailID, true);
         xmlhttp.send();
     }
 

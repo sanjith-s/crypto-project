@@ -96,8 +96,8 @@
                 border: 2px solid rgb(163, 116, 207);
                 background-color: rgb(163, 116, 207);
             }
-            #mail, #user{
-                margin-top: 10px;
+            input , textarea{
+                margin-top: 5px;
                 font-size: 14pt;
                 color: blueviolet;
                 border: 2px dashed blueviolet;

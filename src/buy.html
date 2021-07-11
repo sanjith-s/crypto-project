@@ -87,7 +87,7 @@
                     console.log(entry)
                 }
             }
-            xmlhttp.open("POST", "http://127.0.0.1/src/scripts/buy.php?email=" + email + "&coins=" + coins + "&money=" + finCost, true);
+            xmlhttp.open("POST", "http://localhost:81/src/scripts/buy.php?email=" + email + "&coins=" + coins + "&money=" + finCost, true);
             xmlhttp.send();
         }
     </script>

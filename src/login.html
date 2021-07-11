@@ -30,11 +30,11 @@
                 let entry = JSON.parse(res);
                 if (entry.accessClear == 1) {
                     sessionStorage.setItem('email', emailID);
-                    window.location.href = "http://127.0.0.1/src/inventory.html";
+                    window.location.href = "http://localhost:81/src/inventory.html";
                 }
             }
         }
-        xmlhttp.open("POST", "http://127.0.0.1/src/scripts/login.php?email=" + emailID + "&pass=" + pass, true);
+        xmlhttp.open("POST", "http://localhost:81/src/scripts/login.php?email=" + emailID + "&pass=" + pass, true);
         xmlhttp.send();
 
     }

@@ -56,6 +56,12 @@
             }
             input {
                 border: 2px dashed blueviolet;
+                color: blueviolet;
+            }
+            textarea {
+                resize: none;
+                border: 2px dashed blueviolet;
+                color: blueviolet;
             }
             #logo {
                 font-family: 'Tourney';
