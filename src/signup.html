@@ -20,12 +20,12 @@
                 Email Address <br><input id="mail" type="email" required>
             </label>
                 <label for="pass1">
-                <!-- Create New Password <br><input id="pass1" class="pass" type="password" required onkeyup="validatePass();"> -->
-                Create New Password <br><input id="pass1" class="pass" type="password" required >
+                Create New Password <br><input id="pass1" class="pass" type="password" required onkeyup="validatePass();">
+                <!-- Create New Password <br><input id="pass1" class="pass" type="password" required > -->
             </label>
                 <label for="pass2">
-                Confirm Your Password <br><input id="pass2" class="pass" type="password" required >
-                <!-- Confirm Your Password <br><input id="pass2" class="pass" type="password" required onkeyup="matchPass();"> -->
+                <!-- Confirm Your Password <br><input id="pass2" class="pass" type="password" required > -->
+                Confirm Your Password <br><input id="pass2" class="pass" type="password" required onkeyup="matchPass();">
             </label>
             </div>
             <!-- <label for="age">
@@ -68,6 +68,7 @@
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function() {
             if (this.status == 200) {
+                console.log(this.responseText)
                 let res = xmlhttp.responseText;
                 let entry = JSON.parse(res);
                 if (entry.accessClear == 1) {
