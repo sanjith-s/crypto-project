@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>
-Transfer Coins
-</title>
-<style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-            
-            * {
-                margin: 0;
-                padding: 0;
-                border: 0;
-                outline: 0;
-                font-size: 100%;
-                vertical-align: baseline;
-                background: transparent;
-            }
-            body {
-                background-color: blueviolet;
-                height: 100vh;
-                width: 100vw;
-                color: white;
-            }
-            .nav-bar {
-                background-color: blueviolet;
-                display: flex;
-                justify-content: space-between;
-                height: 50px;
-                color: white;
-                font-family: 'Roboto';
-                font-size: 20px;
-                border-bottom: 5px solid white;
-            }
-            nav ul li {
-                display: inline-block;
-                list-style: none;
-                padding: 0 25px 0 25px;
-                height: 50px;
-            }
-            ul {
-                display: flex;
-                height: 50px;
-                align-items: center;
-            }
-            #title {
-                font-size: 32pt;
-                padding-left: 15px;
-                font-family: 'Tourney';
-            }
-            nav li:hover {
-                background-color: white;
-                color: blueviolet;
-            }
-            a {
-                display: inline-block;
-                text-decoration: none;
-                color: inherit;
-                margin-top: 10px;
-            }
-            #container {
+    <title>
+        Transfer Coins
+    </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        
+        body {
+            background-color: blueviolet;
+            height: 100vh;
+            width: 100vw;
+            color: white;
+        }
+        
+        .nav-bar {
+            background-color: blueviolet;
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            color: white;
+            font-family: 'Roboto';
+            font-size: 20px;
+            border-bottom: 5px solid white;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            padding: 0 25px 0 25px;
+            height: 50px;
+        }
+        
+        ul {
+            display: flex;
+            height: 50px;
+            align-items: center;
+        }
+        
+        #title {
+            font-size: 32pt;
+            padding-left: 15px;
+            font-family: 'Tourney';
+        }
+        
+        nav li:hover {
+            background-color: white;
+            color: blueviolet;
+        }
+        
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: inherit;
+            margin-top: 10px;
+        }
+        
+        #container {
             height: 75vh;
             width: 80vw;
             margin-top: 5%;
@@ -75,32 +83,37 @@ Transfer Coins
             font-size: 16pt;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;   
-            }
-            .button {
-                border: 2px solid blueviolet;
-                background-color: blueviolet;
-                color: white;
-                font-family: 'tourney';
-                font-size: 18pt;
-                height: 50px;
-                padding: 2px 2px 2px 2px ;
-                margin-left: 20%;
-                margin-top: 5%;
-                margin-right: 20%;
-            }
-            #f2 {
-                margin-right: 15%;
-            }
-            #f1 {
-                margin-left: 5%;
-            }
-            .button:hover {
-                background-color: white;
-                border: 2px dashed blueviolet;
-                color: blueviolet;
-            }
-             #coin-num {
+            justify-content: space-evenly;
+        }
+        
+        .button {
+            border: 2px solid blueviolet;
+            background-color: blueviolet;
+            color: white;
+            font-family: 'tourney';
+            font-size: 18pt;
+            height: 50px;
+            padding: 2px 2px 2px 2px;
+            margin-left: 20%;
+            margin-top: 5%;
+            margin-right: 20%;
+        }
+        
+        #f2 {
+            margin-right: 15%;
+        }
+        
+        #f1 {
+            margin-left: 5%;
+        }
+        
+        .button:hover {
+            background-color: white;
+            border: 2px dashed blueviolet;
+            color: blueviolet;
+        }
+        
+        #coin-num {
             width: 100px;
             color: blueviolet;
             font-family: 'Tourney';
@@ -108,21 +121,25 @@ Transfer Coins
             padding-left: 4%;
             padding-right: 4%;
             border: none;
-            }
-            input {
-                border: 2px dashed blueviolet;
-            }
-            textarea {
-                border: 2px dashed blueviolet;
-                resize: none;
-            }
-            #fc {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-</style>
+        }
+        
+        input {
+            border: 2px dashed blueviolet;
+        }
+        
+        textarea {
+            border: 2px dashed blueviolet;
+            resize: none;
+        }
+        
+        #fc {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
 </head>
+
 <body>
     <header class="nav-bar">
         <span id="title">Yo Coin</span>
@@ -137,26 +154,44 @@ Transfer Coins
             </ul>
         </nav>
     </header>
-<div id="container">
-<span style="text-align:center; width: 100%; display: inline-block; font-size: 32pt;">Transfer Coins</span><br>
-<div style="margin-left: 5%;">Balance:<span style="padding-left: 15px;font-family: 'Staatliches'; font-size: 28pt;"
-    id="mybalance">500</span>&nbsp;YoCoins</div><br>
-<div id="fc">
-    <div id="f1"><label for="user">User Id of beneficiary:<br><input type="text" id="user" name="user-id"></label><br><br>
-        <label for="coin">Coins:<br><input id="coin-num" type="number" value="0" min=1 max=999>Yo Coins</label><br>
+    <div id="container">
+        <span style="text-align:center; width: 100%; display: inline-block; font-size: 32pt;">Transfer Coins</span><br>
+        <div style="margin-left: 5%;">Balance:<span style="padding-left: 15px;font-family: 'Staatliches'; font-size: 28pt;" id="mybalance">500</span>&nbsp;YoCoins</div><br>
+        <div id="fc">
+            <div id="f1"><label for="mail">Email ID of Benificiary:<br><input type="text" id="mail" name="user-id"></label><br><br>
+                <label for="coin">Coins:<br><input id="coin-num" type="number" value="0" min=1 max=999>Yo Coins</label><br>
+            </div>
+            <div id="f2">
+                <label for="description">Message:</label><br>
+                <textarea id="description" name="description"></textarea><br><br>
+                <label for="pass">Confirm your password:</label><br>
+                <input type="password" name="pass" id="pass">
+            </div>
+        </div>
+        <button class="button">Transfer Now</button>
     </div>
-    <div id="f2">
-        <label for="description">Message:</label><br>
-        <textarea id="description" name="description"></textarea><br><br>
-        <label for="pass">Confirm your password:</label><br>
-        <input type="password" name="pass" id="pass">
-    </div>
-</div>
-<button class="button">Transfer Now</button>
-</div>
 </body>
 <script>
     let bal = +(document.getElementById("mybalance").innerHTML);
-    document.getElementById("coin-num").setAttribute("max",`${bal}`);
+    document.getElementById("coin-num").setAttribute("max", `${bal}`);
+
+    function transfer() {
+        let userEmail = sessionStorage.setItem('email', emailID);
+        let emailID = document.getElementById("mail").value;
+        let pass = document.getElementById("pass").value;
+        let coinCount = document.getElementById("coin").value;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            console.log(xmlhttp.responseText)
+            if (this.status == 200) {
+                let res = xmlhttp.responseText;
+                let entry = JSON.parse(res);
+                console.log(entry)
+            }
+        }
+        xmlhttp.open("POST", "http://127.0.0.1/src/scripts/transfer.php?email=" + emailID + "&pass=" + pass + "&coins=" + $coinCount + "&userEmail" + userEmail, true);
+        xmlhttp.send();
+    }
 </script>
+
 </html>

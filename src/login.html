@@ -7,21 +7,22 @@
 </head>
 
 <body>
-<div id="wrapper">
-    <div id="logo">Yo Coin</div><br>
-    <div id="title">Login</div><br>
-    <div id=content>
-        <label for="mail">E-mail <br><br><input type="email" id="mail" name="mail"></label>
-        <label for="pass">Password <br><br><input type="password" id="pass" name="pass"></label>
-        <a id="signin" href="signup.html">Not yet registered? Sign Up.</a>
-        <button id="login" onclick="check()">Login</button>
-    </div>
+    <div id="wrapper">
+        <div id="logo">Yo Coin</div><br>
+        <div id="title">Login</div><br>
+        <div id=content>
+            <label for="mail">E-mail <br><br><input type="email" id="mail" name="mail"></label>
+            <label for="pass">Password <br><br><input type="password" id="pass" name="pass"></label>
+            <a id="signin" href="signup.html">Not yet registered? Sign Up.</a>
+            <button id="login" onclick="check()">Login</button>
+        </div>
 </body>
 
 <script>
     function check() {
         let emailID = document.getElementById("mail").value;
         let pass = document.getElementById("pass").value;
+        console.log(emailID + pass)
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onload = function() {
             console.log(xmlhttp.responseText)
